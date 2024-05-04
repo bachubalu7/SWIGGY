@@ -15,7 +15,7 @@ public class MagicalArena {
                 System.out.println("Enter details for Player 1:");
                 player1 = MagicalArena.getPlayerInput(scanner, 1);
 
-                // Take input for Player 2
+                // Take input for Player2
                 System.out.println("Enter details for Player 2:");
                 player2 = MagicalArena.getPlayerInput(scanner, 2);
                            
