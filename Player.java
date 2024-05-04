@@ -6,7 +6,7 @@ public class Player implements PlayerInterface{
     private int health;
     private int strength;
     private int attack;
-    private static Random random = new Random();
+    private Random random = new Random();
     
     public Player(String name, int health, int strength, int attack) {
         this.name = name;
@@ -26,11 +26,11 @@ public class Player implements PlayerInterface{
     }
     // Method for attacking the opponent
     public void attack(Player opponent) {
-        int attackRoll = Player.rollDie();
+        int attackRoll = rollDie();
         int damage = attackRoll * attack;
         System.out.println(name + " attacks with roll " + attackRoll + " and causes " + damage + " damage.");
 
-        int defenseRoll = Player.rollDie();
+        int defenseRoll = opponent.rollDie();
         int defense = defenseRoll * opponent.strength;
         System.out.println(opponent.name + " defends with roll " + defenseRoll + " and defends " + defense + " damage.");
 
@@ -42,7 +42,7 @@ public class Player implements PlayerInterface{
     }
 
     // Method for rolling a six-sided die
-    private static int rollDie() {
+    public int rollDie() {
         return random.nextInt( 6) + 1;
     }
 
