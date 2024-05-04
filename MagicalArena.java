@@ -13,11 +13,11 @@ public class MagicalArena {
             case 1:{
                 //Take input for Player1
                 System.out.println("Enter details for Player 1:");
-                player1 = MagicalArena.getPlayerInput(scanner, 1);
+                player1 = MagicalArena.getPlayerInput(scanner);
 
                 // Take input for Player2
                 System.out.println("Enter details for Player 2:");
-                player2 = MagicalArena.getPlayerInput(scanner, 2);
+                player2 = MagicalArena.getPlayerInput(scanner);
                            
             break;
             }
@@ -62,7 +62,7 @@ public class MagicalArena {
             return player1;
         return player2;
     }
-    private static Player getPlayerInput(Scanner scanner, int playerNumber) {
+    private static Player getPlayerInput(Scanner scanner) {
         System.out.println("Enter name: ");
         String name = scanner.next();
 
