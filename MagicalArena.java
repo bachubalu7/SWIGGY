@@ -2,7 +2,7 @@ import java.util.*;
 // MagicalArena class to manage the game
 public class MagicalArena {
     public static void main(String[] args) {
-	Scanner scanner = new Scanner(System.in);
+    ConsoleInputReader scanner = new ConsoleInputReader();
 	Player player1 = null;
     Player player2 = null;
     boolean endGame = false;
@@ -57,12 +57,12 @@ public class MagicalArena {
         
     }
     }
-    private static Player checkLeastHealthPlayer(Player player1, Player player2){
-        if(player1.getHealth() < player2.getHealth())
+    public static Player checkLeastHealthPlayer(Player player1, Player player2){
+        if(player1.getHealth() <= player2.getHealth())
             return player1;
         return player2;
     }
-    private static Player getPlayerInput(Scanner scanner) {
+    public static Player getPlayerInput(ConsoleInputReader scanner) {
         System.out.println("Enter name: ");
         String name = scanner.next();
 
