@@ -63,6 +63,7 @@ public class MagicalArena {
         return player2;
     }
     public static Player getPlayerInput(ConsoleInputReader scanner) {
+        try{
         System.out.println("Enter name: ");
         String name = scanner.next();
 
@@ -75,9 +76,16 @@ public class MagicalArena {
         System.out.println("Enter attack: ");
         int attack = scanner.nextInt();
 
-        // Consume the newline character after reading integers
-        scanner.nextLine();
-
         return new Player(name, health, strength, attack);
+        }
+        catch(InputMismatchException e){
+            System.out.println("health, strength, attack should be strictly integer and name should be strictly string");
+            main(new String[0]);
+            throw e;
+        }
+        catch(Exception e){
+            throw e;
+        }
+        
     }
 }
